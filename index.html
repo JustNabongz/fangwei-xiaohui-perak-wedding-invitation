@@ -99,13 +99,13 @@
   .hero {
     display: flex; flex-direction: column; align-items: center;
     text-align: center;
-    padding: 68px 24px 48px;
+    padding: 68px 36px 48px;
     background: var(--white);
     min-height: 100svh;
   }
   .hero-left { width: 100%; display: flex; justify-content: center; }
   .hero-photo {
-    width: 66vw; max-width: 280px;
+    width: 96vw; max-width: 460px;
     aspect-ratio: 2/3;
     border-radius: 50% 50% 4% 4% / 34% 34% 3% 3%;
     overflow: hidden; flex-shrink: 0;
@@ -750,21 +750,20 @@
     position: fixed;
     bottom: 28px; right: 24px;
     z-index: 200;
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 12px;
     background: var(--gold);
     color: var(--white);
     border: none; cursor: pointer;
-    padding: 14px 24px 14px 20px;
-    border-radius: 40px;
-    box-shadow: 0 6px 28px rgba(184,149,106,0.45);
+    padding: 17px 30px 17px 24px;
+    border-radius: 50px;
+    box-shadow: 0 8px 32px rgba(184,149,106,0.5);
     font-family: 'DM Sans', sans-serif;
-    font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; font-weight: 500;
     text-decoration: none;
     transition: transform 0.25s cubic-bezier(0.34,1.56,0.64,1),
                 box-shadow 0.25s ease,
                 opacity 0.3s ease,
                 background 0.2s;
-    /* hidden by default, shown after scroll */
     opacity: 0; pointer-events: none;
     transform: translateY(16px);
     will-change: transform, opacity;
@@ -781,7 +780,7 @@
   .rsvp-fab svg { flex-shrink: 0; }
 
   @media (max-width: 379px) {
-    .rsvp-fab { bottom: 20px; right: 16px; padding: 13px 18px 13px 16px; font-size: 9px; }
+    .rsvp-fab { bottom: 20px; right: 16px; padding: 15px 22px 15px 18px; font-size: 10px; }
   }
 
   /* ===========================================
@@ -1213,7 +1212,7 @@
 
 <!-- RSVP FAB -->
 <button class="rsvp-fab" id="rsvp-fab" onclick="openRsvp()" aria-label="RSVP">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/>
     <polyline points="22,6 12,13 2,6"/>
   </svg>
