@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+SC:wght@300;400;600&display=swap" rel="stylesheet">
+<script>if (history.scrollRestoration) history.scrollRestoration = 'manual';</script>
 <style>
   :root {
     --gold:       #b8956a;
@@ -673,9 +674,6 @@
   function closeRsvp() { backdrop.classList.remove('open'); document.body.style.overflow = ''; }
   function handleBackdropClick(e) { if (e.target === backdrop) closeRsvp(); }
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeRsvp(); });
-
-  if (history.scrollRestoration) history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
 
   ['touchstart','touchmove'].forEach(function(t) {
     document.addEventListener(t, function(){}, { passive: true });
