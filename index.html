@@ -1742,7 +1742,7 @@
   var hero = document.querySelector('.hero');
   var fabObserver = new IntersectionObserver(function(entries) {
     fab.classList.toggle('visible', !entries[0].isIntersecting);
-  }, { threshold: 0.15 });
+  }, { threshold: 0.05 });
   fabObserver.observe(hero);
 
   /* ---- Countdown to 12 Sep 2026 08:00 MYT (UTC+8) ---- */
