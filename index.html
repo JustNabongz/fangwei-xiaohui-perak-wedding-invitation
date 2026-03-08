@@ -63,13 +63,13 @@
   =========================================== */
   nav {
     position: -webkit-sticky; position: sticky; top: 0; z-index: 100;
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 12px;
-    padding: 11px 16px;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 8px;
+    padding: 11px 12px;
     background: rgba(250,246,240,0.97);
     border-bottom: 1px solid rgba(240,232,220,0.5);
   }
   nav a {
-    font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase;
+    font-size: 10px; letter-spacing: 0.10em; text-transform: uppercase;
     color: var(--ink-light); text-decoration: none; font-weight: 400;
     white-space: nowrap; padding: 4px 2px;
     -webkit-tap-highlight-color: transparent;
@@ -161,11 +161,12 @@
   }
   .hero-name-cn {
     font-family: 'Noto Serif SC', serif;
-    font-size: 0.55em;
+    font-size: clamp(14px, 3vw, 18px);
     font-weight: 300;
     color: var(--gold);
-    letter-spacing: 0.05em;
-    vertical-align: middle;
+    letter-spacing: 0.18em;
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
   .hero-ampersand {
     font-family: 'Cormorant Garamond', serif;
@@ -1278,9 +1279,11 @@
   <div class="hero-right">
   <div class="hero-ornament" data-i18n="hero.ornament">Together with our families, we joyfully invite you to celebrate our wedding</div>
   <div class="hero-names">
-    <h1>Lance <span class="hero-name-cn">(方伟)</span></h1>
+    <h1>Lance</h1>
+    <div class="hero-name-cn">方伟</div>
     <span class="hero-ampersand">&amp;</span>
-    <h1>Xiao Hui <span class="hero-name-cn">(小卉)</span></h1>
+    <h1>Xiao Hui</h1>
+    <div class="hero-name-cn">小卉</div>
   </div>
   <div class="hero-info">
     <div class="hero-date" data-i18n="hero.date">12 ~ 14 September 2026</div>
