@@ -904,11 +904,23 @@
   .inapp .hero {
     contain: none !important;
   }
-  /* FIX: in WebViews, remove clip-path entirely for simplest possible layout */
+  /* FIX: in WebViews, restore overflow:hidden (safe here since all animations,
+     will-change, and contain are already stripped above). Use simple border-radius
+     instead of clip-path since older WebViews have poor clip-path support.
+     Also add padding-bottom fallback since Telegram doesn't support aspect-ratio. */
   .inapp .hero-photo {
     clip-path: none !important;
-    border-radius: 0 !important;
+    overflow: hidden !important;
+    border-radius: 8px !important;
     box-shadow: none !important;
+  }
+  .inapp .hero-photo-inner {
+    aspect-ratio: unset !important;
+    padding-bottom: 150%; /* 2:3 fallback for WebViews without aspect-ratio */
+  }
+  .inapp .hero-photo-inner img {
+    position: absolute;
+    inset: 0;
   }
   .inapp .reveal {
     opacity: 1 !important;
