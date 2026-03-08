@@ -512,6 +512,16 @@
   .contact-info p { font-size: 16px; color: var(--ink-light); line-height: 1.85; }
   .contact-info strong { color: var(--ink); font-weight: 500; }
   .contact-info a { color: var(--gold); text-decoration: none; }
+  .route-map {
+    margin: 4px 0 12px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--cream-dark);
+    box-shadow: 0 4px 20px rgba(44,36,32,0.07);
+  }
+  .route-map-svg {
+    width: 100%; height: auto; display: block;
+  }
 
   /* ===========================================
      EXPLORE
@@ -1593,7 +1603,177 @@
     <div class="travel-option reveal">
       <div class="travel-option-badge alt" data-i18n="travel.alternative">Alternative</div>
       <h3 data-i18n="travel.fly.kl.title">Fly to Kuala Lumpur (KUL)</h3>
-      <p data-i18n="travel.fly.kl.desc">Fly into Kuala Lumpur, rent a car, and enjoy the drive north. It is about 2 hours from KL and a wonderful option if you would like to explore the city or take in the scenery along the way.</p>
+      <p data-i18n="travel.fly.kl.desc">A great alternative if you'd like more flexibility — KL is served by multiple carriers including Singapore Airlines, Jetstar, and AirAsia, with flights throughout the day. From KL, it's about a 2.5-hour drive north, and a lovely option if you'd like to explore the city or enjoy the scenery along the way.</p>
+    </div>
+
+    <!-- ROUTE MAP VISUAL -->
+    <div class="route-map reveal">
+      <svg viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg" class="route-map-svg" aria-label="Map showing drive routes from Ipoh and Kuala Lumpur to Kampung Chui Chak">
+
+        <!-- Background: land -->
+        <rect width="420" height="480" rx="14" fill="#e8e2d4"/>
+
+        <!-- Sea / water (west coast Straits of Malacca) -->
+        <path d="M0,0 L72,0 Q60,40 52,80 Q44,130 48,180 Q44,230 40,280 Q36,330 42,380 Q46,420 40,480 L0,480 Z" fill="#d0dde8"/>
+
+        <!-- Perak state region (lighter land) -->
+        <path d="M72,0 L420,0 L420,220 Q380,210 340,215 Q300,218 260,210 Q220,205 190,210 Q160,215 130,208 Q100,202 72,210 Z" fill="#ede6d8"/>
+
+        <!-- Selangor / KL region (slightly different tone) -->
+        <path d="M72,290 Q100,285 140,288 Q180,290 220,285 Q270,280 310,285 Q360,288 420,280 L420,480 L42,480 Q36,440 40,400 Q44,360 40,320 Q44,300 72,290 Z" fill="#e4ddd0"/>
+
+        <!-- Forest/highland blobs east side -->
+        <ellipse cx="340" cy="100" rx="70" ry="55" fill="rgba(180,195,165,0.5)"/>
+        <ellipse cx="370" cy="200" rx="55" ry="60" fill="rgba(175,190,160,0.4)"/>
+        <ellipse cx="350" cy="320" rx="65" ry="50" fill="rgba(180,195,165,0.35)"/>
+        <ellipse cx="320" cy="430" rx="55" ry="40" fill="rgba(175,190,160,0.3)"/>
+
+        <!-- Titiwangsa range suggestion -->
+        <path d="M300,0 Q310,60 305,120 Q300,180 310,240 Q315,300 305,360 Q298,410 300,480" stroke="rgba(160,175,145,0.5)" stroke-width="12" fill="none" stroke-linecap="round"/>
+
+        <!-- ===== ROAD NETWORK ===== -->
+
+        <!-- AH2 / E1 North-South Expressway (main spine) -->
+        <!-- This is the primary highway running Ipoh → KCC → KL -->
+        <path d="M168,42 Q165,65 162,90 Q160,115 158,140 Q156,160 157,178 Q158,195 160,210 Q162,230 163,255 Q164,275 162,300 Q160,325 158,355 Q156,380 154,410 Q152,440 150,465" stroke="rgba(255,252,248,0.9)" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Highway centre line -->
+        <path d="M168,42 Q165,65 162,90 Q160,115 158,140 Q156,160 157,178 Q158,195 160,210 Q162,230 163,255 Q164,275 162,300 Q160,325 158,355 Q156,380 154,410 Q152,440 150,465" stroke="rgba(220,200,170,0.6)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="8,5"/>
+
+        <!-- Route 1 (older trunk road, runs parallel slightly east) -->
+        <path d="M178,42 Q176,70 174,100 Q172,130 170,158 Q169,175 170,192 Q172,210 174,230 Q176,255 177,278 Q178,305 176,330 Q174,360 172,390 Q170,420 168,460" stroke="rgba(255,252,248,0.6)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- Federal Route 1 branch near Teluk Intan area (goes west) -->
+        <path d="M157,210 Q130,215 108,220 Q85,225 65,222 Q50,220 40,218" stroke="rgba(255,252,248,0.65)" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+        <!-- Route towards Slim River / Tanjung Malim area -->
+        <path d="M162,300 Q185,295 210,292 Q235,290 255,288 Q275,286 295,290" stroke="rgba(255,252,248,0.5)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+        <!-- KL ring road / ELITE highway (comes from southeast) -->
+        <path d="M150,465 Q155,450 160,430 Q168,405 172,380 Q176,355 175,330 Q174,310 173,290 Q172,270 172,255 Q173,240 175,230" stroke="rgba(240,230,210,0.7)" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+        <!-- Secondary road Kampar area -->
+        <path d="M165,160 Q145,155 125,158 Q105,160 88,165 Q70,170 55,168" stroke="rgba(255,252,248,0.45)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- Road east from Tapah -->
+        <path d="M163,195 Q190,190 215,188 Q240,186 265,190 Q285,193 300,198" stroke="rgba(255,252,248,0.4)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- Rawang / Serendah connector -->
+        <path d="M160,385 Q185,382 210,380 Q235,378 255,382" stroke="rgba(255,252,248,0.4)" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+        <!-- ===== HIGHLIGHTED ROUTES ===== -->
+
+        <!-- IPOH → KCC route (gold, along AH2) -->
+        <path id="ipoh-route" d="M168,58 Q166,80 163,105 Q161,128 159,150 Q157,165 157,178 Q158,190 159,200" stroke="#b8956a" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- KL → KCC route (sage, up AH2 from south) -->
+        <path id="kl-route" d="M152,452 Q153,435 154,415 Q156,390 157,365 Q158,340 159,318 Q160,298 160,278 Q160,258 160,240 Q160,225 159,210 Q159,205 159,200" stroke="#8a9a7b" stroke-width="3.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <!-- Animated dot: Ipoh → KCC -->
+        <circle r="5" fill="#b8956a" opacity="0.95" filter="url(#glow-gold)">
+          <animateMotion dur="2.8s" repeatCount="indefinite">
+            <mpath href="#ipoh-route"/>
+          </animateMotion>
+        </circle>
+
+        <!-- Animated dot: KL → KCC -->
+        <circle r="5" fill="#8a9a7b" opacity="0.95">
+          <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.8s">
+            <mpath href="#kl-route"/>
+          </animateMotion>
+        </circle>
+
+        <!-- Glow filter -->
+        <defs>
+          <filter id="glow-gold" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- ===== DESTINATION PIN: Kampung Chui Chak ===== -->
+        <!-- Position: ~158, 200 — Langkap area, south of Ipoh, west of AH2 -->
+        <g transform="translate(159,200)">
+          <ellipse cx="0" cy="20" rx="7" ry="3" fill="rgba(44,36,32,0.2)"/>
+          <path d="M0,-24 C-11,-24 -17,-15 -17,-7 C-17,5 0,24 0,24 C0,24 17,5 17,-7 C17,-15 11,-24 0,-24 Z" fill="#b8956a"/>
+          <path d="M0,-24 C-11,-24 -17,-15 -17,-7 C-17,5 0,24 0,24 C0,24 17,5 17,-7 C17,-15 11,-24 0,-24 Z" fill="none" stroke="rgba(255,252,248,0.3)" stroke-width="1"/>
+          <circle cx="0" cy="-7" r="7" fill="rgba(255,252,248,0.95)"/>
+          <circle cx="0" cy="-7" r="3" fill="#b8956a"/>
+        </g>
+        <!-- KCC label callout -->
+        <path d="M176,190 L230,178 L230,196 L176,196 Z" fill="rgba(44,36,32,0.85)"/>
+        <rect x="230" y="168" width="142" height="38" rx="7" fill="rgba(44,36,32,0.85)"/>
+        <text x="301" y="182" text-anchor="middle" fill="#faf6f0" font-family="'DM Sans', sans-serif" font-size="9.5" font-weight="600" letter-spacing="0.8">KAMPUNG CHUI CHAK</text>
+        <text x="301" y="197" text-anchor="middle" fill="#d4b896" font-family="'DM Sans', sans-serif" font-size="8.5" letter-spacing="0.3">Langkap, Perak</text>
+
+        <!-- ===== IPOH AIRPORT NODE ===== -->
+        <g transform="translate(168,50)">
+          <circle cx="0" cy="0" r="13" fill="#faf6f0" stroke="#b8956a" stroke-width="2.5"/>
+          <text x="0" y="4" text-anchor="middle" fill="#b8956a" font-family="'DM Sans', sans-serif" font-size="8.5" font-weight="700">IPH</text>
+        </g>
+        <!-- Ipoh label -->
+        <rect x="185" y="36" width="90" height="18" rx="5" fill="rgba(255,252,248,0.92)"/>
+        <text x="230" y="49" text-anchor="middle" fill="#2c2420" font-family="'DM Sans', sans-serif" font-size="9" font-weight="500">Ipoh Airport</text>
+        <!-- Ipoh drive time pill -->
+        <rect x="185" y="62" width="92" height="22" rx="11" fill="#b8956a"/>
+        <text x="231" y="77" text-anchor="middle" fill="#fffcf8" font-family="'DM Sans', sans-serif" font-size="9" font-weight="500" letter-spacing="0.3">~1.5 hrs drive ↓</text>
+
+        <!-- ===== KL NODE ===== -->
+        <g transform="translate(152,458)">
+          <circle cx="0" cy="0" r="13" fill="#faf6f0" stroke="#8a9a7b" stroke-width="2.5"/>
+          <text x="0" y="4" text-anchor="middle" fill="#8a9a7b" font-family="'DM Sans', sans-serif" font-size="8" font-weight="700">KUL</text>
+        </g>
+        <!-- KL label -->
+        <rect x="168" y="444" width="90" height="18" rx="5" fill="rgba(255,252,248,0.92)"/>
+        <text x="213" y="457" text-anchor="middle" fill="#2c2420" font-family="'DM Sans', sans-serif" font-size="9" font-weight="500">Kuala Lumpur</text>
+        <!-- KL drive time pill -->
+        <rect x="168" y="416" width="92" height="22" rx="11" fill="#8a9a7b"/>
+        <text x="214" y="431" text-anchor="middle" fill="#fffcf8" font-family="'DM Sans', sans-serif" font-size="9" font-weight="500" letter-spacing="0.3">~2.5 hrs drive ↑</text>
+
+        <!-- City labels -->
+        <!-- Kampar -->
+        <circle cx="165" cy="155" r="3" fill="rgba(90,78,70,0.4)"/>
+        <text x="175" y="158" fill="#5a4e46" font-family="'DM Sans', sans-serif" font-size="8" opacity="0.8">Kampar</text>
+
+        <!-- Tapah -->
+        <circle cx="163" cy="193" r="3" fill="rgba(90,78,70,0.4)"/>
+        <text x="173" y="196" fill="#5a4e46" font-family="'DM Sans', sans-serif" font-size="8" opacity="0.8">Tapah</text>
+
+        <!-- Slim River -->
+        <circle cx="161" cy="295" r="3" fill="rgba(90,78,70,0.4)"/>
+        <text x="171" y="298" fill="#5a4e46" font-family="'DM Sans', sans-serif" font-size="8" opacity="0.8">Slim River</text>
+
+        <!-- Rawang -->
+        <circle cx="157" cy="375" r="3" fill="rgba(90,78,70,0.4)"/>
+        <text x="167" y="378" fill="#5a4e46" font-family="'DM Sans', sans-serif" font-size="8" opacity="0.7">Rawang</text>
+
+        <!-- Teluk Intan -->
+        <circle cx="88" cy="220" r="3" fill="rgba(90,78,70,0.35)"/>
+        <text x="50" y="218" fill="#5a4e46" font-family="'DM Sans', sans-serif" font-size="8" opacity="0.7">Teluk Intan</text>
+
+        <!-- PERAK label -->
+        <text x="260" y="80" fill="rgba(90,78,70,0.25)" font-family="'Cormorant Garamond', serif" font-size="22" font-style="italic" letter-spacing="2">PERAK</text>
+
+        <!-- SELANGOR label -->
+        <text x="235" y="390" fill="rgba(90,78,70,0.2)" font-family="'Cormorant Garamond', serif" font-size="18" font-style="italic" letter-spacing="1.5">SELANGOR</text>
+
+        <!-- Compass rose -->
+        <g transform="translate(385, 34)">
+          <circle cx="0" cy="0" r="16" fill="rgba(255,252,248,0.75)" stroke="rgba(184,149,106,0.35)" stroke-width="1.5"/>
+          <text x="0" y="-4" text-anchor="middle" fill="#b8956a" font-family="'DM Sans', sans-serif" font-size="10" font-weight="700">N</text>
+          <path d="M0,-13 L2.5,-5 L0,-7 L-2.5,-5 Z" fill="#b8956a"/>
+          <path d="M0,13 L2.5,5 L0,7 L-2.5,5 Z" fill="rgba(184,149,106,0.45)"/>
+          <line x1="-13" y1="0" x2="13" y2="0" stroke="rgba(184,149,106,0.3)" stroke-width="1"/>
+        </g>
+
+        <!-- Scale bar -->
+        <g transform="translate(18, 454)">
+          <line x1="0" y1="0" x2="50" y2="0" stroke="rgba(90,78,70,0.5)" stroke-width="1.5"/>
+          <line x1="0" y1="-4" x2="0" y2="4" stroke="rgba(90,78,70,0.5)" stroke-width="1.5"/>
+          <line x1="50" y1="-4" x2="50" y2="4" stroke="rgba(90,78,70,0.5)" stroke-width="1.5"/>
+          <text x="25" y="-7" text-anchor="middle" fill="rgba(90,78,70,0.6)" font-family="'DM Sans', sans-serif" font-size="7.5">~50 km</text>
+        </g>
+
+      </svg>
     </div>
 
     <div class="contact-info reveal">
@@ -1915,7 +2095,7 @@
       'travel.carrental.best': 'Car Rental Ipoh Jaya (Airport Ipoh) — 评分最高',
       'travel.alternative': '备选',
       'travel.fly.kl.title': '飞往吉隆坡 (KUL)',
-      'travel.fly.kl.desc': '飞抵吉隆坡后租车北上，车程约2小时。如果您想顺便游览吉隆坡或沿途欣赏风景，这是个不错的选择。',
+      'travel.fly.kl.desc': '如果您希望有更多选择，飞往吉隆坡是个不错的方案——多家航空公司均有班次，包括新加坡航空、捷星及亚航，全天候均有航班可选。从吉隆坡驱车北上约2.5小时，沿途风景优美，也可顺道游览市区。',
       'travel.contact.intro': '如需预订或交通安排方面的帮助，请联系：',
       'travel.contact.groom': '<strong>男方联系人：</strong> Sallie Wong<br><a href="tel:+6596601694">+65 9660 1694</a>',
       'travel.contact.bride': '<strong>女方联系人：</strong> 小卉<br><a href="tel:+6583155626">+65 8315 5626</a>',
