@@ -159,15 +159,6 @@
     font-size: clamp(30px, 7.5vw, 44px);
     font-weight: 300; line-height: 1.1; color: var(--ink);
   }
-  .hero-name-cn {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 0.45em;
-    font-weight: 300;
-    color: var(--gold);
-    letter-spacing: 0.08em;
-    vertical-align: middle;
-    margin-left: 4px;
-  }
   .hero-ampersand {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(20px, 5vw, 26px);
@@ -1279,11 +1270,11 @@
     </div>
   </div>
   <div class="hero-right">
-  <div class="hero-ornament" data-i18n="hero.ornament">Together with our families, we joyfully invite you to celebrate our wedding</div>
+  <div class="hero-ornament" data-i18n-html="hero.ornament">Together with our families,<br>we joyfully invite you to<br>celebrate our wedding</div>
   <div class="hero-names">
-    <h1>Lance <span class="hero-name-cn">方伟</span></h1>
+    <h1><span data-i18n="hero.name.groom">Fang Wei</span></h1>
     <span class="hero-ampersand">&amp;</span>
-    <h1>Xiao Hui <span class="hero-name-cn">小卉</span></h1>
+    <h1><span data-i18n="hero.name.bride">Xiao Hui</span></h1>
   </div>
   <div class="hero-info">
     <div class="hero-date" data-i18n="hero.date">12 ~ 14 September 2026</div>
@@ -1661,7 +1652,7 @@
 </section>
 
 <footer>
-  <p>Lance (方伟) &amp; Xiao Hui (小卉) &middot; September 2026</p>
+  <p>Fang Wei &amp; Xiao Hui &middot; September 2026</p>
 </footer>
 
 <!-- RSVP FAB -->
@@ -1836,6 +1827,8 @@
       'hero.badge.label': '婚礼邀请函',
       'hero.badge.title': '诚邀您的到来',
       'hero.ornament': '我们携双方家人，诚挚邀请您一同见证我们的婚礼',
+      'hero.name.groom': '方伟',
+      'hero.name.bride': '小卉',
       'hero.date': '2026年9月12日 ~ 14日',
       'hero.location': '马来西亚 霹雳州 冷甲 水闸新村',
       'countdown.days': '天',
@@ -1849,17 +1842,17 @@
       'itinerary.title': '活动流程',
       'itinerary.day1.label': '星期六，9月12日',
       'itinerary.day1.e1.name': '过大礼',
-      'itinerary.day1.e1.cn': '过大礼',
+      'itinerary.day1.e1.cn': 'Guò Dà Lǐ',
       'itinerary.day1.e1.note': '两家人之间的传统礼品交换仪式，是华人婚礼中最为隆重的传统之一。',
       'itinerary.day1.e2.name': '自助晚餐',
-      'itinerary.day1.e2.cn': '自助餐',
+      'itinerary.day1.e2.cn': 'Zì Zhù Cān',
       'itinerary.day1.e2.note': '一个美食与欢乐的夜晚。带上好胃口，尽情享用，想待多久就待多久。',
       'itinerary.day2.label': '星期日，9月13日',
       'itinerary.day2.e1.name': '敬茶仪式',
-      'itinerary.day2.e1.cn': '敬茶',
+      'itinerary.day2.e1.cn': 'Jìng Chá Yí Shì',
       'itinerary.day2.e1.note': '新人向长辈敬茶的传统仪式，表达对双方家庭的感恩与敬意。',
       'itinerary.day2.e2.name': '婚宴',
-      'itinerary.day2.e2.cn': '晚宴',
+      'itinerary.day2.e2.cn': 'Hūn Yàn',
       'itinerary.day2.e2.note': '我们婚礼最重要的一环——与家人好友共享传统中式喜宴。',
       'itinerary.note': '以上时间仅供参考，可能因天气或实际情况略有调整。活动之间的空闲时间由您自由安排——可以到村里散步、休息片刻，或尽情享受乡间的宁静。',
       'map.bride.childhood': '新娘娘家',
