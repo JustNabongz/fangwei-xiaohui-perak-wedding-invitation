@@ -156,17 +156,17 @@
   .hero-names { }
   .hero-names h1 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 9vw, 52px);
-    font-weight: 300; line-height: 1.0; color: var(--ink);
+    font-size: clamp(30px, 7.5vw, 44px);
+    font-weight: 300; line-height: 1.1; color: var(--ink);
   }
   .hero-name-cn {
     font-family: 'Noto Serif SC', serif;
-    font-size: clamp(14px, 3vw, 18px);
+    font-size: 0.45em;
     font-weight: 300;
     color: var(--gold);
-    letter-spacing: 0.18em;
-    margin-top: 4px;
-    margin-bottom: 4px;
+    letter-spacing: 0.08em;
+    vertical-align: middle;
+    margin-left: 4px;
   }
   .hero-ampersand {
     font-family: 'Cormorant Garamond', serif;
@@ -250,13 +250,13 @@
       justify-content: center; align-items: center;
       padding: 80px 64px;
     }
-    .hero-names h1 { font-size: clamp(52px, 4.5vw, 68px); }
-    .hero-ampersand { font-size: 30px; margin: 12px 0; }
-    .hero-ornament { font-size: 12px; letter-spacing: 0.3em; margin-bottom: 28px; }
+    .hero-names h1 { font-size: clamp(44px, 4vw, 58px); }
+    .hero-ampersand { font-size: 26px; margin: 8px 0; }
+    .hero-ornament { font-size: 12px; letter-spacing: 0.3em; margin-bottom: 20px; }
     .hero-date { font-size: 14px; }
     .hero-location { font-size: 18px; }
-    .hero-info { margin-top: 28px; }
-    .hero-scroll { margin-top: 48px; }
+    .hero-info { margin-top: 20px; }
+    .hero-scroll { margin-top: 32px; }
   }
   @media (min-width: 1200px) {
     .hero-right { padding: 80px 96px; }
@@ -1279,11 +1279,9 @@
   <div class="hero-right">
   <div class="hero-ornament" data-i18n="hero.ornament">Together with our families, we joyfully invite you to celebrate our wedding</div>
   <div class="hero-names">
-    <h1>Lance</h1>
-    <div class="hero-name-cn">方伟</div>
+    <h1>Lance <span class="hero-name-cn">方伟</span></h1>
     <span class="hero-ampersand">&amp;</span>
-    <h1>Xiao Hui</h1>
-    <div class="hero-name-cn">小卉</div>
+    <h1>Xiao Hui <span class="hero-name-cn">小卉</span></h1>
   </div>
   <div class="hero-info">
     <div class="hero-date" data-i18n="hero.date">12 ~ 14 September 2026</div>
