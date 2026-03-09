@@ -999,7 +999,7 @@
     top: 0 !important;
   }
   .telegram .rsvp-fab {
-    display: none !important;
+    /* FAB is shown in Telegram — scroll fallback in JS handles visibility */
   }
   .telegram .rsvp-modal-backdrop {
     position: absolute !important;
@@ -1418,7 +1418,7 @@
           <div class="event-time">6:00 PM &ndash; Late</div>
           <div class="event-content">
             <div class="event-name" data-i18n="itinerary.day1.e2.name">Buffet Dinner</div>
-            <div class="event-name-cn" data-i18n="itinerary.day1.e2.cn">自助餐</div>
+            <div class="event-name-cn" data-i18n="itinerary.day1.e2.cn">自助餐 Zì Zhù Cān</div>
             <div class="event-note" data-i18n="itinerary.day1.e2.note">An evening of great food and even better company. Come with an appetite and stay for as long as you like.</div>
             <a href="https://maps.app.goo.gl/LSVAPruTJ6Mq9Wgg6?g_st=ic" target="_blank" rel="noopener" class="map-card-link">
               <div class="map-card">
@@ -1541,7 +1541,7 @@
       <div class="section-label" data-i18n="accom.label">Where You'll Stay</div>
       <div class="section-title" data-i18n="accom.title">Accommodation</div>
       <div class="section-body">
-        <p data-i18n="accom.body">We have arranged homestay accommodation right within Kampung Chui Chak, so you will be close to all the festivities. No booking is needed on your end. We will confirm the exact details once headcount is finalised. This applies to guests coming from overseas as well.</p>
+        <p data-i18n="accom.body">We have arranged homestay accommodation within Kampung Chui Chak, so you will be close to all the festivities. No booking is needed on your end. We will confirm the exact details once the headcount is finalised. This arrangement also applies to guests traveling from overseas.</p>
       </div>
     </div>
 
@@ -1577,7 +1577,7 @@
     <div class="travel-option reveal">
       <div class="travel-option-badge" data-i18n="travel.recommended">Recommended</div>
       <h3 data-i18n="travel.fly.ipoh.title">Fly Direct to Ipoh (IPH)</h3>
-      <p data-i18n="travel.fly.ipoh.desc">The simplest way to get here. Scoot operates daily direct flights from Singapore Changi to Ipoh, with a flight time of around 1 hour 15 minutes.</p>
+      <p data-i18n="travel.fly.ipoh.desc">The simplest way to get here is by air. Scoot operates daily direct flights from Singapore Changi to Ipoh, with a flight time of around 1 hour 15 minutes.</p>
       <div class="travel-details">
         <div class="travel-detail"><span class="td-label" data-i18n="travel.fly.ipoh.route.label">✈️ Route:</span> <span data-i18n="travel.fly.ipoh.route.value">SIN → IPH via Scoot</span></div>
         <div class="travel-detail"><span class="td-label" data-i18n="travel.fly.ipoh.fare.label">💰 Fare:</span> <span data-i18n="travel.fly.ipoh.fare.value">From ~SGD 300 return (subject to availability)</span></div>
@@ -1918,13 +1918,27 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -20px 0px' });
   document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el); });
 
-  /* ---- FAB: show after hero ---- */
+  /* ---- FAB: show after hero scrolls out of view ---- */
   var fab = document.getElementById('rsvp-fab');
   var hero = document.querySelector('.hero');
-  var fabObserver = new IntersectionObserver(function(entries) {
-    fab.classList.toggle('visible', !entries[0].isIntersecting);
-  }, { threshold: 0.05 });
-  fabObserver.observe(hero);
+
+  function updateFabVisibility() {
+    var heroBottom = hero.getBoundingClientRect().bottom;
+    fab.classList.toggle('visible', heroBottom < 0);
+  }
+
+  // Primary: IntersectionObserver (works in most browsers)
+  if ('IntersectionObserver' in window) {
+    var fabObserver = new IntersectionObserver(function(entries) {
+      fab.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0.05 });
+    fabObserver.observe(hero);
+  }
+
+  // Fallback: scroll event for Telegram/WebView where IO may not fire
+  window.addEventListener('scroll', updateFabVisibility, { passive: true });
+  // Also run once on load in case page is already scrolled
+  updateFabVisibility();
 
   /* ---- Countdown to 12 Sep 2026 08:00 MYT (UTC+8) ---- */
   var cdTarget = new Date('2026-09-12T08:00:00+08:00').getTime();
@@ -2026,7 +2040,7 @@
       'itinerary.day1.e1.cn': 'Guò Dà Lǐ',
       'itinerary.day1.e1.note': '两家人之间的传统礼品交换仪式，是华人婚礼中最为隆重的传统之一。',
       'itinerary.day1.e2.name': '自助晚餐',
-      'itinerary.day1.e2.cn': 'Zì Zhù Cān',
+      'itinerary.day1.e2.cn': 'Zì Zhù Wǎn Cān',
       'itinerary.day1.e2.note': '一个美食与欢乐的夜晚。带上好胃口，尽情享用，想待多久就待多久。',
       'itinerary.day2.label': '星期日，9月13日',
       'itinerary.day2.e1.name': '敬茶仪式',
@@ -2055,7 +2069,7 @@
       'travel.title': '从新加坡到水闸新村',
       'travel.recommended': '推荐',
       'travel.fly.ipoh.title': '直飞怡保 (IPH)',
-      'travel.fly.ipoh.desc': '最便捷的方式。酷航每天运营从新加坡樟宜机场直飞怡保的航班，飞行时间约1小时15分钟。',
+      'travel.fly.ipoh.desc': '最便捷的出行方式是乘飞机。酷航每天运营从新加坡樟宜机场直飞怡保的航班，飞行时间约1小时15分钟。',
       'travel.fly.ipoh.route.label': '✈️ 航线：',
       'travel.fly.ipoh.route.value': 'SIN → IPH 酷航直飞',
       'travel.fly.ipoh.fare.label': '💰 票价：',
